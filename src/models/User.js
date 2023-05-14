@@ -9,7 +9,7 @@ const UserSchema = (sequelize, DataTypes) => {
     },
         displayName: DataTypes.STRING,
         email: DataTypes.STRING,
-        password: DataTypes.INTEGER,
+        password: DataTypes.STRING,
         image: DataTypes.STRING
     },
     {

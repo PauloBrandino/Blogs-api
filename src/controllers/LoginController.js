@@ -11,7 +11,7 @@ const login = async (req, res) => {
 
         const user = await UserService.getUserByEmail(email);
 
-        if (!user || user.password !== Number(password)) {
+        if (!user || user.password !== password) {
             return res
                 .status(400)
                 .json({ message: 'Invalid fields' });
