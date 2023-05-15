@@ -1,5 +1,5 @@
 const { UserService } = require('../services');
-const token = require('../utils/generateToken');
+const { token } = require('../utils/generateToken');
 
 const login = async (req, res) => {
     try {

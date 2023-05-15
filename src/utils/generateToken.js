@@ -5,4 +5,9 @@ const JWT_CONFIG = { algorithm: 'HS256', expiresIn: '10m' };
 
 const token = (bodyReq) => jwt.sign(bodyReq, SECRET_WORD, JWT_CONFIG);
 
-module.exports = token;
+const validateTokenFunc = (tokenID) => jwt.verify(tokenID, SECRET_WORD);
+
+module.exports = {
+    token,
+    validateTokenFunc
+};
