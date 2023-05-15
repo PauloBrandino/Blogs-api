@@ -6,6 +6,7 @@ const { validateToken } = require('../middleware/validateToken');
 const userRoute = express.Router();
 
 userRoute.post('/', validateUserBody, UserController.createUser);
-userRoute.get('/', validateToken, UserController.getAllUsers)
+userRoute.get('/', validateToken, UserController.getAllUsers);
+userRoute.get('/:id', validateToken, UserController.getUserById);
 
 module.exports = userRoute;

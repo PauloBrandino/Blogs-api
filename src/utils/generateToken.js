@@ -9,5 +9,5 @@ const validateTokenFunc = (tokenID) => jwt.verify(tokenID, SECRET_WORD);
 
 module.exports = {
     token,
-    validateTokenFunc
+    validateTokenFunc,
 };
