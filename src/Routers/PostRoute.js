@@ -6,5 +6,6 @@ const validateBodyPost = require('../middleware/validateCreatePostBody');
 const postRoute = express.Router();
 
 postRoute.post('/', validateToken, validateBodyPost, PostController.createPost);
+postRoute.get('/', validateToken, PostController.getAllPosts);
 
 module.exports = postRoute;
