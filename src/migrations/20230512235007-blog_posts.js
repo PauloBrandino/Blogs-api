@@ -19,7 +19,7 @@ module.exports = {
       updated: {
         type: Sequelize.DATE
       },
-      userId: {
+      user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
