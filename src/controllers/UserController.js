@@ -1,5 +1,5 @@
 const { UserService } = require('../services');
-const { token } = require('../utils/generateToken');
+const { token, validateTokenFunc } = require('../utils/generateToken');
 
 const createUser = async (req, res) => {
     try {
@@ -36,8 +36,18 @@ const getUserById = async (req, res) => {
     return res.status(200).json(getUser);
 };
 
+const deleteUser = async (req, res) => {
+    const { authorization } = req.headers;
+    const { id } = validateTokenFunc(authorization);
+
+    await UserService.deleteUser(id);
+
+    return res.status(204).json();
+};
+
 module.exports = {
     createUser,
     getAllUsers,
     getUserById,
+    deleteUser,
 };
