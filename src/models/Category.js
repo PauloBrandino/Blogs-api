@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const CategorySchema = (sequelize, DataTypes) => {
-    const CategoryTable = sequelize.define('Category', {
+    const Category = sequelize.define('Category', {
         id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -14,7 +14,7 @@ const CategorySchema = (sequelize, DataTypes) => {
         underscored: true,
         timestamps: false,
     });
-    return CategoryTable;
+    return Category;
 };
 
 module.exports = CategorySchema;

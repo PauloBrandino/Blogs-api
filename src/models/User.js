@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const UserSchema = (sequelize, DataTypes) => {
-    const UserTable = sequelize.define('User', {
+    const User = sequelize.define('User', {
         id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -17,7 +17,12 @@ const UserSchema = (sequelize, DataTypes) => {
         underscored: true,
         timestamps: false,
     });
-    return UserTable;
-};
-
+    User.associate = ({ BlogPost }) => {
+        User.hasMany(BlogPost, {
+          foreignKey: 'userId',
+          as: 'blogPosts',
+        });
+    };
+    return User;
+}
 module.exports = UserSchema;

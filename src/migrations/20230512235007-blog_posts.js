@@ -19,7 +19,7 @@ module.exports = {
       updated: {
         type: Sequelize.DATE
       },
-      user_id: {
+      userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('blogPosts');
+    await queryInterface.dropTable('blog_posts');
 
   }
 };
