@@ -6,6 +6,7 @@ const validateUpdateBody = require('../middleware/validateUpdatePostBody');
 
 const postRoute = express.Router();
 
+postRoute.get('/search', validateToken, PostController.queryParams);
 postRoute.post('/', validateToken, validateBodyPost, PostController.createPost);
 postRoute.get('/', validateToken, PostController.getAllPosts);
 postRoute.get('/:id', validateToken, PostController.getById);
